@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="au.com.msbit.cordova.audio-category"
+        version="0.1.0">
+
+  <name>AudioCategory</name>
+  <description>Allow setting audio category</description>
+
+  <js-module src="www/MSBAudioCategory.js" name="MSBAudioCategory">
+    <clobbers target="window.MSBAudioCategory" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="MSBAudioCategory">
+        <param name="ios-package" value="MSBAudioCategory" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <header-file src="src/ios/MSBAudioCategory.h"/>
+    <source-file src="src/ios/MSBAudioCategory.m"/>
+  </platform>
+</plugin>
