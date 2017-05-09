@@ -27,7 +27,7 @@ The category value specified can be as follows:
 * `record` corresponding to `AVAudioSessionCategoryRecord`
 * `soloAmbient` corresponding to `AVAudioSessionCategorySoloAmbient`
 
-Details of the individual `AVAudioSessionCategory` behaviours is as described in the Apple developer documentation. [2](https://developer.apple.com/reference/avfoundation/avaudiosession/audio_session_categories)
+Details of the individual `AVAudioSessionCategory` behaviours can be found in the Apple developer documentation. [2](https://developer.apple.com/reference/avfoundation/avaudiosession/audio_session_categories?language=objc)
 
 ### Available Methods
 
@@ -49,4 +49,4 @@ window.MSBAudioCategory.setCategory(name)
 ### References
 
 * [1] https://developer.apple.com/reference/avfoundation/avaudiosession/1616583-setcategory?language=objc
-* [2] https://developer.apple.com/reference/avfoundation/avaudiosession/audio_session_categories
+* [2] https://developer.apple.com/reference/avfoundation/avaudiosession/audio_session_categories?language=objc
