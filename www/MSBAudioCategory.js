@@ -2,14 +2,14 @@ var exec = require('cordova/exec');
 
 var MSBAudioCategory =  {
   getCategory: function() {
-    exec(function(category){
-      console.log(category);
-    }, function(){}, 'MSBAudioCategory', 'getCategory');
+    return new Promise(function(resolve, reject) {
+      exec(resolve, reject, 'MSBAudioCategory', 'getCategory');
+    });
   },
   setCategory: function(category) {
-    exec(function(){}, function(error){
-      console.log(error);
-    }, 'MSBAudioCategory', 'setCategory', [category]);
+    return new Promise(function(resolve, reject) {
+      exec(resolve, reject, 'MSBAudioCategory', 'setCategory', [category]);
+    });
   }
 };
 module.exports = MSBAudioCategory;

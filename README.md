@@ -43,7 +43,6 @@ window.MSBAudioCategory.setCategory(name)
 
 ### Todo
 
-* Return promises from plugin methods
 * Execute off main thread in native plugin
 
 ### References
