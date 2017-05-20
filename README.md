@@ -43,7 +43,6 @@ window.MSBAudioCategory.setCategory(name)
 
 ### Todo
 
-* Execute off main thread in native plugin
 
 ### References
 

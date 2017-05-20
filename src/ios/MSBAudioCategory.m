@@ -17,29 +17,33 @@ NSDictionary *audioCategories;
 }
 
 - (void)getCategory:(CDVInvokedUrlCommand*)command {
-  NSString *enumAudioCategory = [[AVAudioSession sharedInstance] category];
-  NSArray *keys = [audioCategories allKeysForObject:enumAudioCategory];
-  NSString *audioCategory = [keys lastObject];
-  CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:audioCategory];
-  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+  [self.commandDelegate runInBackground:^{
+    NSString *enumAudioCategory = [[AVAudioSession sharedInstance] category];
+    NSArray *keys = [audioCategories allKeysForObject:enumAudioCategory];
+    NSString *audioCategory = [keys lastObject];
+    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:audioCategory];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+  }];
 }
 
 - (void)setCategory:(CDVInvokedUrlCommand*)command {
-  NSString *audioCategory = (NSString*)command.arguments[0];
-  NSString *enumAudioCategory = [audioCategories objectForKey:audioCategory];
+  [self.commandDelegate runInBackground:^{
+    NSString *audioCategory = (NSString*)command.arguments[0];
+    NSString *enumAudioCategory = [audioCategories objectForKey:audioCategory];
 
-  NSError *error = nil;
-  BOOL success = [[AVAudioSession sharedInstance] setCategory:enumAudioCategory error:&error];
+    NSError *error = nil;
+    BOOL success = [[AVAudioSession sharedInstance] setCategory:enumAudioCategory error:&error];
 
-  CDVPluginResult *result;
+    CDVPluginResult *result;
 
-  if(success) {
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success"];
-  } else {
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:error.description];
-  }
+    if(success) {
+      result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success"];
+    } else {
+      result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:error.description];
+    }
 
-  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+  }];
 }
 
 @end
