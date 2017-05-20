@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="au.com.msbit.cordova.audio-category"
-        version="0.1.0">
+        version="0.2.0">
 
   <name>AudioCategory</name>
   <description>Allow setting audio category</description>
