@@ -1,0 +1,30 @@
+{
+  "name": "AudioCategory",
+  "version": "0.2.0",
+  "description": "Allow setting audio category",
+  "cordova": {
+    "id": "cordova-plugin-audio-category",
+    "platforms": [
+      "ios"
+    ]   
+  },  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msbit/cordova-plugin-audio-category.git"
+  },  
+  "keywords": [
+    "cordova-ios"
+  ],  
+  "engines": [
+    {   
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }   
+  ],  
+  "author": "Tom Sullivan <tom@msbit.com.au> (https://github.com/msbit)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msbit/cordova-plugin-audio-category/issues"
+  },  
+  "homepage": "https://github.com/msbit/cordova-plugin-audio-category#readme"
+}
