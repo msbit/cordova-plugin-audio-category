@@ -1,5 +1,5 @@
 {
-  "name": "AudioCategory",
+  "name": "cordova-plugin-audio-category",
   "version": "0.3.0",
   "description": "Allow setting audio category",
   "cordova": {
