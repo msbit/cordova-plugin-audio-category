@@ -2,7 +2,7 @@
 
 @interface MSBAudioCategory : CDVPlugin
 
-- (void)getCategory:(CDVInvokedUrlCommand*)command;
-- (void)setCategory:(CDVInvokedUrlCommand*)command;
+- (void)getCategory:(CDVInvokedUrlCommand *)command;
+- (void)setCategory:(CDVInvokedUrlCommand *)command;
 
 @end
