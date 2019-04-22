@@ -2,13 +2,13 @@ const exec = require('cordova/exec');
 
 class MSBAudioCategory {
   static getCategory () {
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
       exec(resolve, reject, 'MSBAudioCategory', 'getCategory');
     });
   }
 
   static setCategory (category) {
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
       exec(resolve, reject, 'MSBAudioCategory', 'setCategory', [category]);
     });
   }
