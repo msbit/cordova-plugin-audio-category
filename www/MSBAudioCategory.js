@@ -1,6 +1,6 @@
 var exec = require('cordova/exec');
 
-var MSBAudioCategory =  {
+var MSBAudioCategory = {
   getCategory: function() {
     return new Promise(function(resolve, reject) {
       exec(resolve, reject, 'MSBAudioCategory', 'getCategory');
