@@ -33,12 +33,27 @@ Details of the individual `AVAudioSessionCategory` behaviours can be found in th
 
 Methods available in the plugin are:
 
-```
-window.MSBAudioCategory.getCategory()
-```
+* `getCategory()`
+* `setCategory(name)`
+
+### Example Usage
+
+#### Fetching the Current Category
 
 ```
-window.MSBAudioCategory.setCategory(name)
+window.MSBAudioCategory.getCategory().then((category) => {
+  console.log(`Current AVAudioSessionCategory is ${category}`);
+});
+```
+
+#### Updating the Category
+
+```
+window.MSBAudioCategory.setCategory('playback').then((result) => {
+  console.log(`AVAudioSessionCategory has been updated: ${result}`);
+}).catch((error) => {
+  console.log(`AVAudioSessionCategory could not be updated: ${error}`);
+});
 ```
 
 ### Todo
